@@ -1,0 +1,57 @@
+/* Username.java
+   
+   Purpose: Template for HW1
+      
+   Written by: Diana Eastman
+   Modified date: February 3, 2013
+*/
+
+import java.util.*;
+
+public class Username {
+   private String firstname;
+   private String lastname;
+   private String fcname; // the firstclass-like username
+    final int MAX = 8;
+    
+   //-----------------------------------------------------------------
+   //  Constructor. Sets the f and l as firstname and lastname,
+   // and computes the fcname with the first character of f
+   // and up to the first 7 characters of l
+   //-----------------------------------------------------------------
+  public Username(String f, String l) {
+  // Your code goes here
+  
+  }
+  
+  
+  
+   //-----------------------------------------------------------------
+   //  Returns a string description of the Username.
+   //-----------------------------------------------------------------
+   public String toString()
+   {
+ // Your code goes here
+   }
+   
+   
+   //-----------------------------------------------------------------
+   //  Checks for equality between this and another Username
+   //-----------------------------------------------------------------
+   public boolean equals (Username another){
+   //Your code goes here
+
+   }
+   
+  public static void main (String[] args) {
+ Username u1 = new Username ("Kathy", "Lee"); System.out.println(u1);
+ Username u2 = new Username ("Jennifer", "Anniston"); System.out.println(u2);
+ if (!u2.equals(u1)) System.out.println("u2 and u1 do not have the same fcname");
+ Username u3 = new Username ("Kate", "Lee"); System.out.println(u3);
+ if (u3.equals(u1)) System.out.println("u3 and u1 have the same fcname");
+ Username u4 = new Username ("Jane", "Anniston"); System.out.println(u4);
+ if (u4.equals(u2)) System.out.println("u4 and u2 have the same fcname");
+ 
+  }
+}
+

@@ -1,0 +1,59 @@
+/* 
+ CorrectChange.java
+ Purpose: 
+ CS230 Homework Assignment 1
+ Written by: Diana Eastman
+ Modified date: January 21, 2010
+*/
+
+import java.util.*;
+
+public class CorrectChange {
+  public static void main (String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
+    Random rand = new Random();
+    
+    int [] currencyArray = {1000, 500, 100, 25, 10, 5, 1}; // $10, $5, $1, $0.25, $0.10, $0.01
+    String [][] currencyNames = { {"Hamilton","Hamiltons"}, {"Lincoln", "Lincolns"}, {"Washington", "Washingtons"}, 
+      {"Quarter", "Quarters"}, {"Dime", "Dimes"}, {"Nickel", "Nickels"}, {"Penny", "Pennies"} };
+    int [] changeArray = new int[7];
+    int cost = rand.nextInt(100000);
+    double paid;
+    int change;
+    
+    System.out.println("Welcome to the Wellesley College vending machine! The cost of your item is $" 
+                        + (double)cost/100 + ". Enter the amount of cash you have.");
+  
+    while (!sc.hasNextDouble()) {
+            System.out.println("Sorry, that doesn't look like a number. Please try again.");
+            sc.next();
+        }
+    
+    paid = sc.nextDouble();
+    
+    while ((paid*100)<cost) {
+           System.out.println("Sorry, that isn't enough money for that item. More money please.");
+           sc.next();
+    }
+    
+        change = (int)(paid*100) - cost;    
+        System.out.println("You paid " + paid + "." + "Your change is $" + (double)(change)/100);
+            
+          for (int i = 0; i < currencyArray.length; i++) {
+        
+            if (change == change % currencyArray[i]) {
+                changeArray[i]=0;
+                change=change;
+            }
+        
+            else {
+                changeArray[i]=change/currencyArray[i]; // put appropriate number in changeArray
+                change=change-currencyArray[i]*changeArray[i];// update number with the appropriate subtraction and iterate.
+                System.out.println(changeArray[i]+ " " + ((changeArray[i] == 1) ? currencyNames[i][0] : currencyNames[i][1]));
+            }
+      }
+} //End main
+}//End class CorrectChange
+
+
