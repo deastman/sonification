@@ -1,0 +1,20 @@
+/* 
+ RockPaperScissors.java
+ Purpose: 
+ CS230 Homework Assignment 2, Problem 1
+ Written by: Diana Eastman
+ Modified date: 
+*/
+
+import java.util.*;
+
+public class RockPaperScissors 
+{
+  
+  public static void main (String[] args)
+  {
+     // Declarations and setup
+    Scanner sc = new Scanner(System.in);
+    Random rand = new Random();
+    
+    

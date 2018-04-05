@@ -1,0 +1,40 @@
+// HeronsFormula.java
+
+import java.util.*;
+
+public class HeronsFormula
+{
+  // private member variables
+  private String triangle1;
+  private String triangle2;
+  
+  // constructor
+  public HeronsFormula ()
+  {
+    triangle1 = triangle2 = ""; // Initialize triangle string to empty
+  }
+  
+  // Methods
+  public void intro()
+  {
+    System.out.println("Let's do some geometry.");
+  }
+  
+  public getTriangles()
+  {
+    // Generate triangle side lengths from the user
+    Scanner in = new Scanner(System.in);
+    String input = "";
+    
+    System.out.print("Enter the lengths of your triangle sides, separated by spaces.");
+    myString.split("\\s+") = in.nextLine();
+  }
+  
+  public static void main (String[] args)
+  { 
+    HeronsFormula myFormula = new HeronsFormula();
+    myFormula.intro();
+    myGame.getTriangles();
+  }
+ 
+}
