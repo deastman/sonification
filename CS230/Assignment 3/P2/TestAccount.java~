@@ -1,0 +1,49 @@
+
+
+public class TestAccount {
+  
+  public static void main(String[ ] args) {
+    
+    //  Read in, from the standard input (the keyboard), the type
+    // of shape and the required shape information.  Then, place
+    // it in an array. At the end sort the array based on area, and
+    // print the results.
+    
+    TestShape tester = new TestShape();
+    Scanner scan = new Scanner(System.in);
+    
+    String letterShape;
+    double radius;
+    double side;
+    
+    // Read the shapes from the standard input
+    do {
+      System.out.print(" Which shape: circle (c) Square (s)\n" + 
+                       "                quit (q):");
+      letterShape = scan.next();
+      if (letterShape.equalsIgnoreCase("c")) { //it is a circle
+        System.out.print("            Enter radius:");
+        radius = scan.nextFloat();
+        
+        Circle circle = new Circle(radius);
+        tester.add(circle);
+      }
+      if (letterShape.equalsIgnoreCase("s")) {
+        System.out.print("            Enter side:");
+        side = scan.nextFloat();
+        
+        Square square = new Square(side);
+        tester.add(square);
+      }
+    } while (!letterShape.equals("q"));
+    
+    // At this point, array contains i number of objects of type Shape
+    tester.sort();
+    // print out the sorted array of Shape objects
+    System.out.println(". . . . . . . . . . . . . . . . . . . . . . ");
+    System.out.println("Here are the Shapes, in sorted order: ");
+    System.out.println(tester.toString());
+    System.out.println("goodbye!");
+  }//End main()
+  
+} //End TestAccount

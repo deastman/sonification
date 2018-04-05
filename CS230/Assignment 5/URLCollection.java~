@@ -1,0 +1,38 @@
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+
+public class URLCollection {
+  
+  private LinkedList<URL> urls;
+  
+  public URLCollection() {
+    urls = new LinkedList<URL>();
+  }
+  
+  //From FileOps.java, written by Takis Metaxas//
+  public static void displayWebPage (String urlName) {
+    try {
+      URL u = new URL(urlName);
+      BufferedReader reader = new BufferedReader(new InputStreamReader(u.openStream()));
+      String line = reader.readLine();  // Read the first line of the web page 
+      while (line != null) {  // Line becomes null at end of web page 
+        System.out.println(line);
+        line = reader.readLine();  // Read the next line of the web page
+      }
+      reader.close();
+    } catch (IOException ex) {
+      System.out.println(ex);
+    }
+  }
+  
+  
+  
+  public static void main (String args[]) {
+    URLCollection.displayWebPage("http://www.oracle.com/");
+    
+  }
+  
+  
+}

@@ -1,0 +1,33 @@
+//********************************************************************
+//  GradSchoolsGUI.java       
+//
+//  
+//********************************************************************
+
+import javax.swing.*;
+
+public class GradSchoolsGUI
+{
+   //-----------------------------------------------------------------
+   //  Sets up a frame containing a tabbed pane. 
+   //  Calls the GradSchools constructor and then passes 
+   //  myGradSchools as a parameter to AddSchools and EvalSchools
+   //-----------------------------------------------------------------
+   public static void main (String[] args)
+   {
+      JFrame myframe = new JFrame ("Graduate School Picker");
+      myframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+      
+      GradSchools myGradSchools = new GradSchools(20);
+
+      JTabbedPane mytpane = new JTabbedPane();
+      mytpane.addTab ("About", new AboutPanel());
+      /*mytpane.addTab ("Add School", new AddSchoolsPanel(myGradSchools));
+      mytpane.addTab ("Evaluate", new EvalSchoolsPanel(myGradSchools));*/
+
+      myframe.getContentPane().add(mytpane);
+
+      myframe.pack();
+      myframe.setVisible(true);
+   }
+}
