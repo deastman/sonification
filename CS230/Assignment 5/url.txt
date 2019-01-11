@@ -1,6 +1,0 @@
-http://www.yahoo.com
-http://www.wellesley.edu
-http://cs.wellesley.edu
-http://www.google.com
-http://cs.wellesley.edu/~pmetaxas
-http://new.wellesley.edu/cs
